@@ -1,3 +1,8 @@
+variable "region" {
+  description = "region var"
+  type        = string
+  default     = "ap-northeast-2"
+}
 
 variable "create" {
   description = "Whether to create an instance"
