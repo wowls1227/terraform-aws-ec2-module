@@ -2,6 +2,17 @@ provider "aws" {
   region=var.region
 }
 
+data "terraform_remote_state" "vpc" {
+  backend = "remote"
+
+  config = {
+    organization = "my-aws-practice"
+    workspaces = {
+      name = "terraform-vcp-my-module"
+    }
+  }
+}
+
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 3.0"
