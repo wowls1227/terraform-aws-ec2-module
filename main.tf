@@ -24,5 +24,5 @@ module "ec2_instance" {
   key_name               = var.key_name
 #  monitoring             = true
 #  vpc_security_group_ids = [var.vpc_security_group_ids]
-   subnet_id              = data.terraform_remote_state.vpc.outputs.public_subnets
+   subnet_id              = data.terraform_remote_state.vpc.outputs.public_subnets[0]
 }
