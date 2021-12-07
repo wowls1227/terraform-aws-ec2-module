@@ -1,3 +1,9 @@
+variable "name" {
+  description = "default name variable"
+  type        = string
+  default     = "default_name"
+}
+
 variable "create" {
   description = "Whether to create an instance"
   type        = bool
